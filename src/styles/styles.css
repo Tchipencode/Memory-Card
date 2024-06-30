@@ -1,0 +1,348 @@
+:root{
+   margin: 0px;
+}
+ html, body{
+   display: flex;
+   flex-direction: column;
+   place-items: center;
+   margin: 0;
+}
+#root {
+   /* max-width: 1280px; */
+   margin: 0;
+   padding: 1rem;
+   color: #213547;
+ }
+header{
+   text-align: center;
+}
+main{
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   /* gap: 20px; */
+}
+.form-inputs{
+   display: flex;
+   flex-direction: column;
+   place-items: start center;
+   border-right: double #213547 8px;
+   padding: 10px;
+   width: 400px;
+   gap: 20px;
+   overflow: scroll;
+   height: 100vh;
+   max-height: 100vh;
+   background-color: #ebebeb;
+}
+.form-output{
+   display: grid;
+   grid-template-rows: 1fr;
+   padding: 10px; 
+}
+.form-output-print{
+   display:grid;
+   grid-template-rows: 150px 2fr;
+   background-color: #ebebeb;
+
+}
+.cv-output-header{
+   display: flex;
+   flex-direction: column;
+   place-content: center center;
+   /* grid-area: a; */
+   text-align: center;
+   gap: 10px;
+   background-color: rgb(8, 48, 100);
+   color: white;
+}
+.cv-output-header h3{
+   margin: 0px;
+   padding: 0 0 15px 0;
+   /* text-align: center; */
+}
+.cv-output-main{
+   display:grid;
+   grid-template-columns: 1fr 2fr;
+   /* padding: 20px; */
+}
+.cv-output-left-side{
+   display: flex;
+   flex-direction: column;
+   place-content: center start;
+   /* grid-area: b; */
+   border-right: 2px solid;
+   padding: 15px;
+
+}
+
+.cv-output-right-side{
+   display: flex;
+   flex-direction: column;
+   place-content: center start;
+   /* grid-area: c; */
+   padding:15px;
+   gap: 10px;
+}
+
+.summary h3{
+   margin: 0px;
+}
+.summary p{
+   background-color: white;
+}
+.cv-experience, .cv-education{
+   background-color: white;
+}
+/* Information form */
+.contact-items{
+   display: flex;
+   flex-direction: column;
+   place-content: start start;
+   background-color: white;
+   padding:10px;
+}
+.contact-items-el{
+   display: grid;
+   grid-template-columns: 20px 1fr;
+   gap: 20px;
+   padding: 10px 0 10px;  
+}
+.contact-items-el p{
+   font-size: 0.9rem;
+   margin: 0;
+}
+/* .softwares, .skills{
+   background-color: white;
+} */
+.cv-software-list, .cv-skills-list{
+   background-color: white;
+}
+/* Education form */
+.education-form{
+   display:none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   gap: 1.5rem;
+}
+.education-input{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+
+}
+.education-section{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   width: 400px;
+   gap: 1.2rem;
+   margin: 10px;
+
+}
+h2{
+   margin: 0px;
+}
+.education-list{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   width: 380px;
+   margin: 0px;
+   padding: 0 10px 0 10px;
+   gap: 1rem;
+}
+.education-list li{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   width: 360px;
+   gap: 1.2rem;
+   background-color: antiquewhite;
+   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.4);
+   padding: 0 10px 0 10px;
+}
+.education-list li h5{
+   margin: 5px;
+}
+.educationList-btns{
+   display: inline-flex;
+   justify-content: space-between;
+   gap: 0.7rem;
+}
+.cv-education-item{
+   padding-bottom: 10px;
+}
+.cv-education-item span {
+   display: flex;
+   flex-direction: row;
+   place-content: center space-between;
+   margin: 10px 0 10px 0;
+}
+.cv-education-item span h4{
+   margin: 0px;
+}
+.graduated-years{
+   font-style: italic;
+   margin: 0px;
+}
+/* Skills form */
+.skills-form{
+   display:none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   gap: 1.5rem;
+}
+.skills-list{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   width: 380px;
+   margin: 0px;
+   padding: 0 10px 0 10px;
+   gap: 1rem;
+}
+.skills-list li{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   width: 360px;
+   gap: 1.2rem;
+   background-color: antiquewhite;
+   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.4);
+   padding: 0 10px 0 10px;
+}
+.skillsList-btns{
+   display: inline-flex;
+   justify-content: space-between;
+   gap: 0.7rem;
+}
+.cv-skills-list{
+   padding-left: 20px;
+}
+/* Softwares form */
+.softwares-form{
+   display:none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   gap: 1.5rem;
+}
+.cv-software-list{
+   padding-left: 20px;
+}
+.softwares-list{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   width: 380px;
+   margin: 0px;
+   padding: 0 10px 0 10px;
+   gap: 1rem;
+}
+.softwares-list li{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   width: 360px;
+   gap: 1.2rem;
+   background-color: antiquewhite;
+   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.4);
+   padding: 0 10px 0 10px;
+}
+.softwareList-btns{
+   display: inline-flex;
+   justify-content: space-between;
+   gap: 0.7rem;
+}
+/* Experience */
+.experience-form{
+   display:none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   gap: 1.5rem;
+}
+.experience-input{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+
+}
+.experience-section{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   width: 400px;
+   gap: 1.2rem;
+   margin: 10px;
+}
+h2{
+   margin: 0px;
+}
+.experience-list{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   width: 380px;
+   margin: 0px;
+   padding: 0 10px 0 10px;
+   gap: 1rem;
+}
+.experience-list li{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   width: 360px;
+   gap: 1.2rem;
+   background-color: antiquewhite;
+   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.4);
+   padding: 0 10px 0 10px;
+   margin-right: 20px;
+
+}
+.experience-list li h5{
+   margin: 5px;
+}
+.experienceList-btns{
+   display: inline-flex;
+   justify-content: space-between;
+   gap: 0.7rem;
+}
+.missions-items{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+
+}
+.cv-experience-item span{
+   display: flex;
+   flex-direction: row;
+   place-content: center start;
+   gap: 20px;
+   margin: 10px 0 10px 0;
+}
+.cv-experience-item p{
+   margin: 10px 0px 10px 0px;
+}
+.cv-experience-item span p, h4{
+   margin: 0px;
+}
