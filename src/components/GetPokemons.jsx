@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import handleScore from "./Score.jsx";
 
-export default function GetPokemons({score, setScore, bestScore, setBestScore}){
+export default function GetPokemons({score, setScore, bestScore, setBestScore, cardId, setCardId, finalList, setFinalList}){
    const [pokemons, setPokemons]=useState([]);
 
    useEffect(()=>{
@@ -31,7 +31,7 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore}){
          console.log(pokemonData);
       };
       fetchPokemons();
-   },[pokemons]);
+   },[]);
 
    // function handleCards(e, id){
    //    const cardName= e.target.id;
@@ -44,16 +44,30 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore}){
    //       if(cardName===cardArray.length){}
    //    }
    // }
+
+   function shuffleArray(array){
+      let newArray=array.slice();
+      let currentIndex=array.length;
+      while(currentIndex!==0){
+         let randomIndex=Math.floor(Math.random()*currentIndex);
+         currentIndex-=1;
+         [newArray[currentIndex], newArray[randomIndex]]=[newArray[randomIndex], newArray[currentIndex]];
+      }
+      return newArray;
+   }
    function handleClick(e){
+      const newFinalList=shuffleArray(pokemons);
+      setPokemons(newFinalList);
       if(!cardId.includes(e.target.id)){
          setCardId([...cardId, e.target.id]);
-         setScore(+1);
+         setScore(score+1);
          console.log(cardId, score);
       } else{
          setCardId([]);
          setBestScore(bestScore< score ? score: bestScore);
          setScore(0);
       }
+      
    }
 
    return(

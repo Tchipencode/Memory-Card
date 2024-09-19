@@ -9,6 +9,7 @@ export default function App(){
    const [score, setScore]=useState(0);
    const [bestScore, setBestScore]=useState(0);
    const [cardId, setCardId]=useState([]);
+   const [finalList, setFinalList]=useState([]);
 
    // function handleClick(e){
    //    if(!cardId.includes(e.target.id)){
@@ -40,6 +41,10 @@ export default function App(){
          setScore={setScore} 
          bestScore={bestScore}
          setBestScore={setBestScore}
+         cardId={cardId}
+         setCardId={setCardId}
+         finalList={finalList}
+         setFinalList={setFinalList}
          />
         
      

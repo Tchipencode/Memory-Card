@@ -39,11 +39,20 @@ main{
    border: solid 1px black;
    border-radius: 5px;
    box-shadow: 1px 3px 4px rgba(0,0,0, 0.4);
-   width: 200px;
-   height: 200px;
+   /* width: 200px;
+   height: 200px; */
    cursor: pointer;
 }
 .card-item:hover{
    box-shadow: 1px 2px 2px 5px rgba(0, 0, 0, 0.6);
    
 }
+.card-item img{
+   height: 15rem;
+   width: 100%;
+}
+@media (prefers-color-scheme: light) {
+   .pokemons{
+     background-color: #ececec;
+   }
+ }
