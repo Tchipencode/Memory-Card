@@ -1,22 +1,11 @@
 import { useState, useEffect } from "react";
-import handleScore from "./Score.jsx";
+
 
 export default function GetPokemons({score, setScore, bestScore, setBestScore, cardId, setCardId, finalList, setFinalList}){
    const [pokemons, setPokemons]=useState([]);
 
    useEffect(()=>{
-      /* fetchData(); */
-      // fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=251")
-      // .then((poke) => {
-      //   return poke.json();
-      // })
-      // .then((list) => {
-      //   setData(list.results);
-      //   console.log(list);
-      // })
-      // .catch((error) => {
-      //   console.error("Error fetching Pokemon:", error);
-      // });
+
       const fetchPokemons= async()=>{
          const response= await fetch("https://pokeapi.co/api/v2/pokemon?offset=20&limit=20");
          const data= await response.json();
@@ -32,18 +21,6 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore, c
       };
       fetchPokemons();
    },[]);
-
-   // function handleCards(e, id){
-   //    const cardName= e.target.id;
-   //    console.log(cardName);
-   //    const cardArray=[];
-   //    if(cardName){
-   //       cardArray.push(cardName);
-   //    }
-   //    for(let i=0; i<cardArray.length; i++){
-   //       if(cardName===cardArray.length){}
-   //    }
-   // }
 
    function shuffleArray(array){
       let newArray=array.slice();
