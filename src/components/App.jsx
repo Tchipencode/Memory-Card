@@ -27,14 +27,15 @@ export default function App(){
       <>
       <header>
          <h1>Memory Game</h1>
-         <h5>Get point by clicking on an image once</h5>
+         <h4>Get point by clicking on an image once</h4>
          <div className="scores">
             <p className="score">Score: {score}</p>
             <p className="best-score">Best Score: {bestScore}</p>
          </div>
+         <hr/>
 
       </header>
-      <hr/>
+      
       <main>
          <GetPokemons 
          score={score} 

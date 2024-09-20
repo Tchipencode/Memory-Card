@@ -53,7 +53,10 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore, c
             {pokemons?(
                pokemons.map((pokemon)=>(
                   <div key={pokemon.id} className="card-item" onClick={handleClick}>
-                     <img id={pokemon.name} src={pokemon.sprites.front_default} alt={pokemon.name} />
+                     <div className="img-div">
+                     <img id={pokemon.name} src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
+                     </div>
+ 
                      <h3>{pokemon.name}</h3>
                </div>
                ))
