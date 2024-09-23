@@ -1,27 +1,11 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import {useState} from "react";
 import GetPokemons from "./GetPokemons.jsx";
-// import handleScore from "./Score.jsx";
-
 
 export default function App(){
-   const [displayPokemons, setDisplayPokemons]=useState([]);
    const [score, setScore]=useState(0);
    const [bestScore, setBestScore]=useState(0);
    const [cardId, setCardId]=useState([]);
-   const [finalList, setFinalList]=useState([]);
-
-   // function handleClick(e){
-   //    if(!cardId.includes(e.target.id)){
-   //       setCardId([...cardId, e.target.id]);
-   //       setScore(+1);
-   //       console.log(cardId, score);
-   //    } else{
-   //       setCardId([]);
-   //       setBestScore(bestScore< score ? score: bestScore);
-   //       setScore(0);
-   //    }
-   // }
 
    return(
       <>
@@ -33,7 +17,6 @@ export default function App(){
             <p className="best-score">Best Score: {bestScore}</p>
          </div>
          <hr/>
-
       </header>
       
       <main>
@@ -44,11 +27,7 @@ export default function App(){
          setBestScore={setBestScore}
          cardId={cardId}
          setCardId={setCardId}
-         finalList={finalList}
-         setFinalList={setFinalList}
          />
-        
-     
       </main>
       </>
    )

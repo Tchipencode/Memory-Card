@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 
-
-export default function GetPokemons({score, setScore, bestScore, setBestScore, cardId, setCardId, finalList, setFinalList}){
+export default function GetPokemons({score, setScore, bestScore, setBestScore, cardId, setCardId}){
    const [pokemons, setPokemons]=useState([]);
 
    useEffect(()=>{
-
       const fetchPokemons= async()=>{
          const response= await fetch("https://pokeapi.co/api/v2/pokemon?offset=20&limit=20");
          const data= await response.json();
-         console.log(data);
          const pokemonData= await Promise.all(
             data.results.map(async (pokemon)=>{
                const pokemonRecord= await fetch(pokemon.url);
@@ -17,7 +14,6 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore, c
             })
          );
          setPokemons(pokemonData);
-         console.log(pokemonData);
       };
       fetchPokemons();
    },[]);
@@ -38,13 +34,11 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore, c
       if(!cardId.includes(e.target.id)){
          setCardId([...cardId, e.target.id]);
          setScore(score+1);
-         console.log(cardId, score);
       } else{
          setCardId([]);
          setBestScore(bestScore< score ? score: bestScore);
          setScore(0);
-      }
-      
+      }   
    }
 
    return(
@@ -56,7 +50,6 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore, c
                      <div className="img-div">
                      <img id={pokemon.name} src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
                      </div>
- 
                      <h3>{pokemon.name}</h3>
                </div>
                ))
