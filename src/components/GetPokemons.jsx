@@ -5,15 +5,23 @@ export default function GetPokemons({score, setScore, bestScore, setBestScore, c
 
    useEffect(()=>{
       const fetchPokemons= async()=>{
-         const response= await fetch("https://pokeapi.co/api/v2/pokemon?offset=20&limit=20");
-         const data= await response.json();
-         const pokemonData= await Promise.all(
-            data.results.map(async (pokemon)=>{
-               const pokemonRecord= await fetch(pokemon.url);
-               return pokemonRecord.json();
-            })
-         );
-         setPokemons(pokemonData);
+         try{
+            const response= await fetch("https://pokeapi.co/api/v2/pokemon?offset=20&limit=20");
+            if(!response){
+               throw new Error("Fetch data is not possible");
+            }
+            const data= await response.json();
+            const pokemonData= await Promise.all(
+               data.results.map(async (pokemon)=>{
+                  const pokemonRecord= await fetch(pokemon.url);
+                  return pokemonRecord.json();
+               })
+            );
+            setPokemons(pokemonData);
+         } catch(error){
+            console.error(error);
+         }
+
       };
       fetchPokemons();
    },[]);

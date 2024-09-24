@@ -1,5 +1,5 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import GetPokemons from "./GetPokemons.jsx";
 
 export default function App(){
